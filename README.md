@@ -5,13 +5,25 @@ Check events from your favorite website using command line interface.
 The website must provide an API using a calendar standard.
 See my [events-searcher](https://github.com/mycaule/events-searcher) project
 
+## Setup
+
+```
+npm install -g check-events-cli
+```
+
+## Publishing on NPM
+```
+npm version patch
+npm publish
+```
+
 ## Configuration
 
 Create `config.json` file and fill a webservice URL.
 
 ## Usage
 ```bash
-mycaule$ ./check.js events --city paris --exclude='toto','titi' --days=samedi,dimanche --summary true
+mycaule$ check events --city paris --exclude='toto','titi' --days=samedi,dimanche --summary true
 
 samedi 4 novembre 2017
   Event 1
@@ -27,7 +39,7 @@ dimanche 5 novembre 2017
 
 Getting help
 ```bash
-mycaule$ ./check.js help
+mycaule$ check help
    check.js 1.0.0
 
    USAGE
@@ -53,3 +65,4 @@ mycaule$ ./check.js help
 - [ ] Document webservice contract
 - [ ] Support for English language
 - [ ] Local configuration file (see [HTTPie Config](https://httpie.org/doc#config)) for the design
+- [ ] Better naming of the tool than just `check`?

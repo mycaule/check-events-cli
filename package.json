@@ -1,6 +1,6 @@
 {
   "name": "check-events-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,8 @@
     "ava": "^0.23.0",
     "execa": "^0.8.0",
     "xo": "^0.18.2"
+  },
+  "bin": {
+    "check": "./bin/check.js"
   }
 }

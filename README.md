@@ -35,18 +35,18 @@ mycaule$ ./check.js help
 
    OPTIONS
 
-     --city <city>             City         optional      default: "paris"              
-     --exclude <excludeL>      Exclude      optional      default: []                   
-     --days <daysL>            Days         optional      default: ["samedi","dimanche"]
-     --summary <sum>           Summary      optional      default: true                 
+     --city <name>            City         optional      default: "paris"
+     --exclude <list>         Exclude      optional      default: []
+     --days <list>            Days         optional      default: ["samedi","dimanche"]
+     --summary <boolean>      Summary      optional      default: true
 
    GLOBAL OPTIONS
 
-     -h, --help         Display help                                      
-     -V, --version      Display version                                   
-     --no-color         Disable colors                                    
+     -h, --help         Display help
+     -V, --version      Display version
+     --no-color         Disable colors
      --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages    
+     -v, --verbose      Verbose mode - will also output debug messages
 ```
 ## TODO list
 

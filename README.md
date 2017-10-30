@@ -22,6 +22,10 @@ First time configuration
 
 ```bash
 $ check config
+Please provide some information here.
+? Events microservice URL: https://us-central1-project-name.cloudfunctions.net/events
+Perfect ! Changes have been written locally !
+/Users/mycaule/Library/Preferences/check-events-cli-nodejs/config.json
 ```
 
 Getting help `check help`.
@@ -80,7 +84,7 @@ If you feel like helping with a pull request, I will be more than happy to revie
 #### Package management
 - [x] Install as global package, publish on NPM
 - [x] Local configuration file
-  - [HTTPie Config](https://httpie.org/doc#config)) for the design of the file
+  - [HTTPie Config](https://httpie.org/doc#config) for the design of the file
   - [NConf in Ghost](https://dev.ghost.org/nconf/) for the user workflow
   - [Conf](https://github.com/sindresorhus/conf) for the minimalist package
 - [ ] Use [update-notifier](https://www.npmjs.com/package/update-notifier) to notify users of updates

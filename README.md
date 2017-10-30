@@ -4,8 +4,8 @@ This package is still in beta.
 
 [![NPM](https://nodei.co/npm/check-events-cli.png)](https://nodei.co/npm/check-events-cli/)
 
-The website must provide an API using a calendar standard.
-See my [events-searcher](https://github.com/mycaule/events-searcher) project
+You must first code a serverless function to fetch the data from your favorite website and expose them with the standard described in this document.
+Code samples are given in this [events-searcher](https://github.com/mycaule/events-searcher) project
 
 ## Setup
 
@@ -18,24 +18,15 @@ npm install -g check-events-cli
 Create `config.json` file and fill a webservice URL.
 
 ## Usage
-```bash
-$ check events --city paris --exclude='toto','titi' --days=samedi,dimanche --summary true
+First time configuration
 
-samedi 4 novembre 2017
-  Event 1
-  Event 2
-  Event 3
-  ...
-dimanche 5 novembre 2017
-  Event 1
-  Event 2
-  Event 3
-  ...
+```bash
+$ check config
 ```
 
-Getting help
+Getting help `check help`.
 ```bash
-mycaule$ check help
+$ check help
    check.js 1.0.0
 
    USAGE
@@ -55,6 +46,22 @@ mycaule$ check help
      -v, --verbose      Verbose mode - will also output debug messages
 ```
 
+Listing events from the command line.
+```bash
+$ check events --city paris --exclude='toto','titi' --days=samedi,dimanche --summary true
+
+samedi 4 novembre 2017
+  Event 1
+  Event 2
+  Event 3
+  ...
+dimanche 5 novembre 2017
+  Event 1
+  Event 2
+  Event 3
+  ...
+```
+
 ## Contributing
 
 If you feel like helping with a pull request, I will be more than happy to review this!
@@ -72,11 +79,12 @@ If you feel like helping with a pull request, I will be more than happy to revie
 
 #### Package management
 - [x] Install as global package, publish on NPM
-- [ ] Better naming of the tool than just `check`?
-- [ ] Local configuration file
+- [x] Local configuration file
   - [HTTPie Config](https://httpie.org/doc#config)) for the design of the file
   - [NConf in Ghost](https://dev.ghost.org/nconf/) for the user workflow
+  - [Conf](https://github.com/sindresorhus/conf) for the minimalist package
 - [ ] Use [update-notifier](https://www.npmjs.com/package/update-notifier) to notify users of updates
+- [ ] Better naming of the tool than just `check`?
 
 ### Publishing on NPM
 ```

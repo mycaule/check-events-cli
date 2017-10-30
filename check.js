@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const app = require('caporal');
+const inquirer = require('inquirer');
 const chalk = require('chalk');
 const axios = require('axios');
-
-const SERVICE_URL = require('./config.json').url;
+const config = new (require('conf'))();
 
 app.version('1.0.0')
   .command('events')
@@ -13,7 +13,7 @@ app.version('1.0.0')
   .option('--days <list>', 'Days', app.LIST, ['samedi', 'dimanche'])
   .option('--summary <boolean>', 'Summary', app.BOOL, true)
   .action((args, options) => {
-    axios.post(SERVICE_URL, options)
+    axios.post(config.get('url'), options)
       .then(resp => {
         Object.keys(resp.data.list).forEach(key => {
           console.log(chalk.cyanBright(key));
@@ -25,6 +25,26 @@ app.version('1.0.0')
       .catch(err => {
         console.log(err);
       });
+  });
+
+app.version('1.0.0')
+  .command('config')
+  .action(() => {
+    console.log('Please provide some information here.');
+
+    const questions = [
+      {
+        type: 'input',
+        name: 'url',
+        message: 'Events microservice URL:'
+      }
+    ];
+
+    inquirer.prompt(questions).then(answers => {
+      config.set(answers);
+      console.log('Perfect ! Changes have been written locally !');
+      console.log(config.path);
+    });
   });
 
 app.parse(process.argv);

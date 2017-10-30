@@ -8,7 +8,7 @@ Usage:
 mycaule$ ./check events --city paris --exclude='toto','titi' --days=lundi,mardi --summary true
 Make HTTP request here with this body:
 { city: 'paris',
-  exclude: 'toto,titi',
-  days: 'lundi,mardi',
+  exclude: [ 'toto', 'titi' ],
+  days: [ 'lundi', 'mardi' ],
   summary: true }
 ```

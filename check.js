@@ -8,6 +8,7 @@ const config = new (require('conf'))();
 
 app.version('1.0.0')
   .command('events')
+  .description('List latest events from the API with filters')
   .option('--city <name>', 'City', ['paris', 'lyon'], 'paris')
   .option('--exclude <list>', 'Exclude', app.LIST, [])
   .option('--days <list>', 'Days', app.LIST, ['samedi', 'dimanche'])
@@ -29,6 +30,7 @@ app.version('1.0.0')
 
 app.version('1.0.0')
   .command('config')
+  .description('Configure the service')
   .action(() => {
     console.log('Please provide some information here.');
 

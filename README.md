@@ -31,23 +31,23 @@ Perfect ! Changes have been written locally !
 Getting help `check help`.
 ```bash
 $ check help
-   check.js 1.0.0
 
-   USAGE
-     check.js events
+check.js 1.0.0
 
-   OPTIONS
-     --city <name>            City         optional      default: "paris"
-     --exclude <list>         Exclude      optional      default: []
-     --days <list>            Days         optional      default: ["samedi","dimanche"]
-     --summary <boolean>      Summary      optional      default: true
+USAGE
+  check.js <command> [options]
 
-   GLOBAL OPTIONS
-     -h, --help         Display help
-     -V, --version      Display version
-     --no-color         Disable colors
-     --quiet            Quiet mode - only displays warn and error messages
-     -v, --verbose      Verbose mode - will also output debug messages
+COMMANDS
+  events              List latest events from the API with filters
+  config              Configure the service
+  help <command>      Display help for a specific command
+
+GLOBAL OPTIONS
+  -h, --help         Display help
+  -V, --version      Display version
+  --no-color         Disable colors
+  --quiet            Quiet mode - only displays warn and error messages
+  -v, --verbose      Verbose mode - will also output debug messages
 ```
 
 Listing events from the command line.

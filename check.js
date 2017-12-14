@@ -22,7 +22,13 @@ app.command('events')
           console.log(chalk.cyanBright(key))
 
           const events = resp.data.list[key].events ? resp.data.list[key].events : []
-          events.map(e => console.log(`  ${patriarchy(e)}`))
+          events.forEach(e => {
+            if (typeof e === 'object') {
+              console.log(patriarchy(e))
+            } else {
+              console.log(`  ${e}`)
+            }
+          })
         })
       })
       .catch(err => {

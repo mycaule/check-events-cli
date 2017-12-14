@@ -82,12 +82,6 @@ If you feel like helping with a pull request, I will be more than happy to revie
 - [ ] Provide samples with actually working events microservices hosted on Google Cloud.
 
 #### Package management
-- [x] Install as global package, publish on NPM
-- [x] Local configuration file
-  - [HTTPie Config](https://httpie.org/doc#config) for the design of the file
-  - [NConf in Ghost](https://dev.ghost.org/nconf/) for the user workflow
-  - [Conf](https://github.com/sindresorhus/conf) for the minimalist package
-- [ ] Use [update-notifier](https://www.npmjs.com/package/update-notifier) to notify users of updates
 - [ ] Better naming of the tool than just `check`?
 
 ### Publishing on NPM

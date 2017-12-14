@@ -7,6 +7,11 @@ const axios = require('axios')
 const config = new (require('conf'))()
 const patriarchy = require('patriarchy')
 
+const updateNotifier = require('update-notifier')
+const pkg = require('./package.json')
+
+updateNotifier({pkg}).notify()
+
 app.version(require('./package.json').version)
 
 app.command('events')

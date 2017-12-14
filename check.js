@@ -12,7 +12,7 @@ const pkg = require('./package.json')
 
 updateNotifier({pkg}).notify()
 
-app.version(require('./package.json').version)
+app.version(pkg.version)
 
 app.command('events')
   .description('List latest events from the API with filters')

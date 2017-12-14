@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
-const app = require('caporal');
-const inquirer = require('inquirer');
-const chalk = require('chalk');
-const axios = require('axios');
-const config = new (require('conf'))();
+const app = require('caporal')
+const inquirer = require('inquirer')
+const chalk = require('chalk')
+const axios = require('axios')
+const config = new (require('conf'))()
+const patriarchy = require('patriarchy')
 
-app.version(require('./package.json').version);
+app.version(require('./package.json').version)
 
 app.command('events')
   .description('List latest events from the API with filters')
@@ -18,21 +19,21 @@ app.command('events')
     axios.post(config.get('url'), options)
       .then(resp => {
         Object.keys(resp.data.list).forEach(key => {
-          console.log(chalk.cyanBright(key));
+          console.log(chalk.cyanBright(key))
 
-          const events = resp.data.list[key].events ? resp.data.list[key].events : [];
-          events.map(e => console.log(`  ${e}`));
-        });
+          const events = resp.data.list[key].events ? resp.data.list[key].events : []
+          events.map(e => console.log(`  ${patriarchy(e)}`))
+        })
       })
       .catch(err => {
-        console.log(err);
-      });
-  });
+        console.log(err)
+      })
+  })
 
 app.command('config')
   .description('Configure the service')
   .action(() => {
-    console.log('Please provide some information here.');
+    console.log('Please provide some information here.')
 
     const questions = [
       {
@@ -40,13 +41,13 @@ app.command('config')
         name: 'url',
         message: 'Events microservice URL:'
       }
-    ];
+    ]
 
     inquirer.prompt(questions).then(answers => {
-      config.set(answers);
-      console.log('Perfect ! Changes have been written locally !');
-      console.log(config.path);
-    });
-  });
+      config.set(answers)
+      console.log('Perfect ! Changes have been written locally !')
+      console.log(config.path)
+    })
+  })
 
-app.parse(process.argv);
+app.parse(process.argv)

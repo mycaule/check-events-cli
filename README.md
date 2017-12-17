@@ -77,8 +77,12 @@ If you feel like helping with a pull request, I will be more than happy to revie
      - [Google Events](https://developers.google.com/google-apps/calendar/v3/reference/events)
      - [Facebook Events](https://developers.facebook.com/docs/graph-api/reference/event/)
      - [Meetup Events](https://www.meetup.com/meetup_api/docs/2/events/))
+     - [schema.org Event](http://schema.org/Event)
 - [ ] Support for English language
 - [ ] Add a `check values` command (*eg.* stock values, ticket prices, announcement)
+     - [schema.org FinancialProduct](http://schema.org/FinancialProduct)
+     - [schema.org TradeAction](http://schema.org/TradeAction)
+     - [schema.org PriceSpecification](http://schema.org/PriceSpecification)
 - [ ] Provide samples with actually working events microservices hosted on Google Cloud.
 
 #### Package management
